@@ -3,32 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Code Breaker</title>
+    <title>Cyber Nexus: Code Breaker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#00ff41">
 </head>
 <body>
-    <div class="matrix-container">
-        <div id="score-board">
-            <span>Score: <span id="score">0</span></span>
-            <span>Level: <span id="level">1</span></span>
-            <span>Time: <span id="time">60</span>s</span>
-        </div>
+    <div class="cyber-container">
+        <div class="glitch-overlay"></div>
         
-        <div id="game-area">
-            <div id="matrix-grid"></div>
-            <div id="code-input-area">
-                <input type="text" id="code-input" placeholder="Enter matrix code">
-                <button id="submit-code">Decode</button>
+        <div class="header">
+            <h1 class="glitch" data-text="Cyber Nexus">Cyber Nexus</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-level-up-alt"></i>
+                    <span id="level">1</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span id="time">60</span>
+                </div>
             </div>
         </div>
-        
-        <div id="game-over" class="hidden">
-            <h2>Game Over!</h2>
-            <p>Final Score: <span id="final-score"></span></p>
-            <button id="restart-game">Restart</button>
+
+        <div class="game-area">
+            <div class="matrix-grid" id="matrix-grid"></div>
+            
+            <div class="control-panel">
+                <div class="code-input-container">
+                    <input type="text" id="code-input" placeholder="Enter decryption code">
+                    <button id="submit-code" class="btn-decode">
+                        <i class="fas fa-unlock"></i> Decode
+                    </button>
+                </div>
+                
+                <div class="power-ups">
+                    <button id="time-boost" class="power-up" title="Add 10 seconds">
+                        <i class="fas fa-stopwatch"></i> Time Boost
+                    </button>
+                    <button id="hint-btn" class="power-up" title="Reveal a code">
+                        <i class="fas fa-lightbulb"></i> Hint
+                    </button>
+                    <button id="randomize-btn" class="power-up" title="Shuffle Grid">
+                        <i class="fas fa-random"></i> Randomize
+                    </button>
+                </div>
+            </div>
         </div>
+
+        <div id="game-over" class="modal hidden">
+            <div class="modal-content">
+                <h2>System Breach Detected</h2>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <div class="character-reaction" id="character-reaction"></div>
+                <div class="modal-actions">
+                    <button id="restart-game" class="btn-restart">
+                        <i class="fas fa-redo"></i> Reboot System
+                    </button>
+                    <button id="share-score" class="btn-share">
+                        <i class="fas fa-share-alt"></i> Share Score
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="achievements" class="achievements-panel">
+            <h3>Cyber Achievements</h3>
+            <div id="achievement-list"></div>
+        </div>
+
+        <div class="easter-egg-zone" id="easter-egg-zone"></div>
     </div>
     
-    <script src="script.js"></script>
+    <audio id="bg-music" loop>
+        <source src="assets/cyberpunk-bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>

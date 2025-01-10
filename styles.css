@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: #00ff41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.matrix-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff41;
+}
+
+#score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #00ff41;
+}
+
+#matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.matrix-cell {
+    background-color: rgba(0, 255, 65, 0.2);
+    color: #00ff41;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.matrix-cell:hover {
+    background-color: rgba(0, 255, 65, 0.5);
+    transform: scale(1.05);
+}
+
+#code-input-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#code-input {
+    padding: 10px;
+    background-color: black;
+    color: #00ff41;
+    border: 2px solid #00ff41;
+    border-radius: 5px;
+}
+
+#submit-code, #restart-game {
+    padding: 10px 20px;
+    background-color: #00ff41;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit-code:hover, #restart-game:hover {
+    background-color: #00ff80;
+}
+
+#game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #00ff41;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}

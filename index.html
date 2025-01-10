@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Code Breaker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="matrix-container">
+        <div id="score-board">
+            <span>Score: <span id="score">0</span></span>
+            <span>Level: <span id="level">1</span></span>
+            <span>Time: <span id="time">60</span>s</span>
+        </div>
+        
+        <div id="game-area">
+            <div id="matrix-grid"></div>
+            <div id="code-input-area">
+                <input type="text" id="code-input" placeholder="Enter matrix code">
+                <button id="submit-code">Decode</button>
+            </div>
+        </div>
+        
+        <div id="game-over" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="final-score"></span></p>
+            <button id="restart-game">Restart</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
